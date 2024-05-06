@@ -44,7 +44,7 @@ class Member extends CI_Controller
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Email tidak terdaftar!!</div>'); redirect('home');
         }
     }
-}
+
     public function daftar()
     {
     $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [ 'required' => 'Nama Belum diis!!'
@@ -71,7 +71,7 @@ class Member extends CI_Controller
                                        'buku' => $this->ModelBuku->getBuku()->result(),
                                    ];
                                    $this->load->view('templates/templates-user/header', $data);
-                                   $this->load->view('buku/daftarbuku', $data);
+                                   $this->load->view('buku/daftar_buku', $data);
                                    $this->load->view('templates/templates-user/modal');
                                    $this->load->view('templates/templates-user/footer', $data);
                                } else {
@@ -179,3 +179,4 @@ public function ubahProfil()
         redirect('home');
     }
     
+}
